@@ -20,27 +20,41 @@ function SetField(e){
 
     //#2
     button.value = firstPlayer ? 'x' : 'o';  
-    console.log(id);
-    console.log(id[id.length-1]);
-    console.log(id[id.length-1]-1);
     
     var elementNumberId = id[id.length-1];
     boardState[elementNumberId - 1] = firstPlayer;
 
-    CheckResult();
+    if(CheckResult() || boardState.every( x !== '')){
+        resetBoard();
+    }
 
-    firstPlayer = !firstPlayer;
 
     //Jeżeli ktoś wygrał - wyczyść planszę 
-
+    
+    firstPlayer = !firstPlayer;
 }
 
 function CheckResult(){
+
     if(boardState[0] !== null && 
         (
             (boardState[0] === boardState[1] && boardState[1] == boardState[2]) 
-        ))
-        alert('Wygrał gracz' + (firstPlayer ? ' pierwszy' : ' drugi'));
+        )){
+            alert('Wygrał gracz' + (firstPlayer ? ' pierwszy' : ' drugi'));
+            return true;
+        }
+
+
+    return false;    
+}
+
+function resetBoard(){
+    for(i = 0; i<9; i++){
+        var button = document.getElementById('Btn'+(i+1))
+        button.value = '';
+        
+        boardState[i] = null;
+    }
 }
 
 
