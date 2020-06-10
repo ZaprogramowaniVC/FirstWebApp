@@ -24,13 +24,18 @@ function SetField(e){
     var elementNumberId = id[id.length-1];
     boardState[elementNumberId - 1] = firstPlayer;
 
-    if(CheckResult() || boardState.every( x !== '')){
+    if(CheckResult()){
         resetBoard();
     }
 
+    var isFull = true;
+    for(var i = 0; i<9; i++){
+        if(boardState[i] === null)
+        isFull = false;
+    }
+    if(isFull)
+        resetBoard();
 
-    //Jeżeli ktoś wygrał - wyczyść planszę 
-    
     firstPlayer = !firstPlayer;
 }
 
@@ -56,6 +61,10 @@ function resetBoard(){
         boardState[i] = null;
     }
 }
+
+// function IsNotEmpty(parameter){
+//     return parameter !== '';
+// }
 
 
 
