@@ -11,8 +11,8 @@ function TestFunction(){
     console.log('Hello from test function');
 }
 
-function TestFunctionWithInput(mojParametr){
-    console.log(mojParametr);
+function TestFunctionWithInput(parameter){
+    console.log(parameter);
 }
 
 function AddFunction(x, y){
@@ -22,6 +22,7 @@ function AddFunction(x, y){
 function AddFunctionWithReturn(x,y){
     return x+y;
 }
+
 
 function switchCaseFunction(onSwitch){
     switch(onSwitch){

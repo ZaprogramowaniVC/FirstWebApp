@@ -1,0 +1,41 @@
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.row{
+    display:flex;
+    flex-direction: row;
+}
+
+input{
+    width: 200px;
+    height: 200px;
+    font-size: 50px;
+    margin: 2px;
+}
+
+input[value='x']{
+    background-color: lightskyblue;
+}
+
+input[value='o']{
+    background-color: lightcoral;
+}
+
+header{
+    background-color: darkgray;
+    padding: 20px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-color: darkgray;
+    padding: 20px;
+}
+
+a:hover{
+    background-color: lightgray;
+}
