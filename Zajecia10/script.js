@@ -4,8 +4,6 @@ for(var i = 0; i<9; i++){
     boardState.push(null);
 }
 
-load('navbar.html',document.getElementById('navbar'));
-
 function SetField(e){
     var id = e.target.getAttribute('id');
     var button = document.getElementById(id);
@@ -76,14 +74,7 @@ function resetBoard(){
     }
 }
 
-function load(url, element)
-{
-    req = new XMLHttpRequest();
-    req.open("GET", url, false);
-    req.send(null);
 
-    element.innerHTML = req.responseText; 
-}
 
 
 
